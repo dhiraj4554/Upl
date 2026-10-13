@@ -1,0 +1,8 @@
+pyrofork
+tgcrypto
+requests
+aiohttp
+yt-dlp
+cryptography
+python-dotenv
+gradio
