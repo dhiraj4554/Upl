@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & virtualenvs
+.env
+.env.*
+!.env.example
+env/
+venv/
+ENV/
+.venv/
+
+# Telegram session files & database
+*.session
+*.session-journal
+
+# Runtime downloads, temp files & config caches
+downloads/
+config.json
+user_session.json
+*.log
+*.tmp
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini

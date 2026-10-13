@@ -1,6 +1,7 @@
 pyrofork
 tgcrypto
 requests
+urllib3
 aiohttp
 yt-dlp
 cryptography

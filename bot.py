@@ -50,11 +50,15 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Load environment variables
-load_dotenv()
+dotenv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+load_dotenv(dotenv_path)
 
-API_ID = int(os.environ.get("API_ID", 26039838))
-API_HASH = os.environ.get("API_HASH", "043c4fc28f7825c84bca454900645fba")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8801935577:AAGEehNQczG7pS9-3hejpFzphOFS2xz-L6o")
+API_ID = int(os.environ.get("API_ID", 0)) if os.environ.get("API_ID") else 0
+API_HASH = os.environ.get("API_HASH", "").strip()
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "").strip()
+
+if not API_ID or not API_HASH or not BOT_TOKEN:
+    logger.error("API_ID, API_HASH, or BOT_TOKEN missing! Please configure them in your .env file or environment variables.")
 
 # Create unique session with ultra-fast multi-channel transmission
 session_name = "classx_downloader_session"
